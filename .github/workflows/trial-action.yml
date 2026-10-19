@@ -6,7 +6,7 @@ on:
   push:
     # Sequence of patterns matched against refs/heads
     branches:
-      - 'main/**'
+      - 'main'
 jobs:
   JobA:
     name: Trial job A
