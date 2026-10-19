@@ -11,9 +11,10 @@ jobs:
   JobA:
     name: Trial job A
     #runs-on: vc1120
-    runs-on: vc1392
-    container:
-      image: ubuntu:22.04
+    #runs-on: vc1392
+    runs-on: ubuntu-latest
+    #container:
+    #  image: ubuntu:22.04
     defaults:
       run:
         shell: bash --noprofile --norc -eo pipefail -x {0}
