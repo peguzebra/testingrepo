@@ -2,10 +2,23 @@ name: Hello World
 
 on:
   workflow_dispatch:
+    inputs:
+      name:
+        description: 'Name to greet'
+        required: true
+        default: 'World'
+        type: string
+      enable_feature:
+        description: 'Enable feature'
+        required: false
+        default: false
+        type: boolean
 
 jobs:
   hello:
     runs-on: ubuntu-latest
     steps:
       - name: Say hello
-        run: echo "Hello, world!"
+        run: echo "Hello, ${{ inputs.name }}!"
+      - name: Show bool param
+        run: echo "enable_feature is ${{ inputs.enable_feature }}"
